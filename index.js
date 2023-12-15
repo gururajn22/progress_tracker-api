@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import { router } from "./routes/url.js";
 
 const app = express();
-dotenv.config();
+dotenv.config({ path: '.env' }); 
 
 app.use(cors());
 app.use(express.json());
@@ -23,7 +23,7 @@ const connectToDatabase = async () => {
     console.log("MongoDB connection established successfully");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error.message);
-    process.exit(1); // Exit the application on connection error
+    process.exit(1); 
   }
 };
 
